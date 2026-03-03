@@ -11,29 +11,41 @@
             return Math.floor(Math.random()*max); 
         }
 
-        let computerChoice = getComputerChoice(3)
+        let computerNumber = getComputerChoice(3)
+        let computerChoice;
 
-        if (computerChoice === 2){
-            console.log("Rock")
-        }
-        if (computerChoice === 1){
-            console.log("Paper")
-        }
-        if (computerChoice === 0){
-            console.log("Scissors")
-        }
-        
-        /*
-        function getHumanChoice{
-
-        }
-        
-        function playRound{
-
-        }
-        */
+        if (computerNumber === 2){
+            computerChoice = "rock";
+        } else if (computerNumber === 1){
+            computerChoice = "paper";
+        } else (computerNumber === 0)
+            computerChoice = "scissors";
         
 
+        function getHumanChoice(){
+            let HumanChoice = "";
+
+            while(true){
+                let input = prompt("Rock, Paper or Scissors?").toLowerCase();
+
+                if (input === "rock" || input === "paper" || input === "scissors"){
+                    HumanChoice = input;
+                    break;
+                }
+            }
+            return HumanChoice;
+
+        }
+        
+        function playRound(humanChoice, computerChoice){
+
+        }
+
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
+        
     </script>
 </body>
 </html>
