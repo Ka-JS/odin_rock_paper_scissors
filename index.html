@@ -52,22 +52,26 @@
             }
         }
         
-        for (let i = 0; i < 5; i++){
-            let humanSelection = getHumanChoice();
-            let computerSelection = getComputerChoice();
-            playRound(humanSelection, computerSelection);
+        function playGame(){
+            for (let i = 0; i < 5; i++){
+                let humanSelection = getHumanChoice();
+                let computerSelection = getComputerChoice();
+                playRound(humanSelection, computerSelection);
+            }
+            console.log("=== FINAL SCORE ===");
+            console.log("You: " + humanScore + " | Computer: " + computerScore);
+            if (humanScore===computerScore){
+                console.log("Game ended in a Tie!")
+            }
+            else if(humanScore > computerScore){
+                console.log("You Won!")
+            }
+            else{
+                console.log("You Lost!")
+            }
         }
-        console.log("=== FINAL SCORE ===");
-        console.log("You: " + humanScore + " | Computer: " + computerScore);
-        if (humanScore===computerScore){
-            console.log("Game ended in a Tie!")
-        }
-        else if(humanScore > computerScore){
-            console.log("You Won!")
-        }
-        else{
-            console.log("You Lost!")
-        }
+        playGame();
+        
         
     </script>
 </body>
